@@ -1,0 +1,121 @@
+<div class="ui container" style="margin-top: 30px" *ngIf="member">
+  <div class="ui stackable two column grid">
+    <div class="four wide column">
+      <div class="ui card" style="width: 100%;">
+        <div class=" image">
+          <img class="profile" src="{{basePhotoUrl + member.photoUrl || 'https://semantic-ui.com/images/avatar2/large/matthew.png' }}">
+        </div>
+        <div class="content">
+          <a class="header">{{member.name}}</a>
+          <div class="meta">
+            <span class="date">Joined {{member.created | date}}</span>
+          </div>
+          <div class="description">
+            {{member.about}}
+          </div>
+        </div>
+        <div class="extra content">
+          <a>
+            <i class="user icon"></i>
+            {{member.totalFollowers}} Followers
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="twelve wide column">
+      <div class="ui segment">
+
+        <p-tabView styleClass="tabview-custom">
+          <p-tabPanel>
+            <ng-template pTemplate="header">
+              <span> Personal Info</span>
+            </ng-template>
+
+            <form class="ui form" #editForm="ngForm" id="editForm" (ngSubmit)="updateMember()">
+              <div class="field">
+                <label>Name</label>
+                <input type="text" [(ngModel)]="member.name" name="name" placeholder="Full Name">
+              </div>
+
+              <div class="field">
+                <label>About</label>
+                <textarea rows="3" type="text" [(ngModel)]="member.about" name="about" placeholder="Few lines about you">     </textarea>
+              </div>
+
+              <div class="field">
+                <label>Address</label>
+                <div class="two fields">
+                  <div class="field">
+                    <input type="text" [(ngModel)]="member.city" name="city" placeholder="City">
+                  </div>
+                  <div class="field">
+                    <input type="text" [(ngModel)]="member.country" name="country" placeholder="Country">
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label>Work</label>
+                <div class="two fields">
+                  <div class="field">
+                    <input type="text" [(ngModel)]="member.workAs" name="workAs" placeholder="Working as">
+                  </div>
+                  <div class="field">
+                    <input type="text" [(ngModel)]="member.workAt" name="workAt" placeholder="Working at">
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label>Github Link</label>
+                <input type="text" [(ngModel)]="member.githubLink" name="githubLink" placeholder="Github link">
+              </div>
+              <button class="ui green button" tabindex="0" type="submit">Submit Profile Information</button>
+            </form>
+          </p-tabPanel>
+
+          <p-tabPanel header="Header II">
+            <ng-template pTemplate="header">
+              <span>Photos</span>
+            </ng-template>
+
+            <app-photo-editor [member]="member"></app-photo-editor>
+
+          </p-tabPanel>
+
+
+          <p-tabPanel header="Header II">
+            <ng-template pTemplate="header">
+              <span>Followed</span>
+            </ng-template>
+            <app-followers-list></app-followers-list>
+
+
+
+          </p-tabPanel>
+
+
+          <p-tabPanel header="Header II">
+            <ng-template pTemplate="header">
+              <span>Followers</span>
+            </ng-template>
+
+
+            <app-following-list></app-following-list>
+
+          </p-tabPanel>
+
+          <p-tabPanel header="Header II">
+            <ng-template pTemplate="header">
+              <span>My Articles</span>
+            </ng-template>
+            <app-user-articles-manage [username]="member.username"></app-user-articles-manage>
+          </p-tabPanel>
+        </p-tabView>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p-toast position="top-right"></p-toast>

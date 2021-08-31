@@ -1,0 +1,70 @@
+<!-- <h4 class="ui dividing header">Upload photo</h4> -->
+<button type="button" class="ui blue button" (click)="showDialog()" icon="pi pi-info-circle" label="Show">Upload
+  Photo</button>
+<br>
+
+<!-- 
+<p-fileUpload
+  name="myfile[]"
+  accept="image/*"
+  [auto]="true"
+  mode="basic"
+  [withCredentials]="false"
+  (onSelect)="onSelect($event)"
+  (onUpload)="onUpload($event)"
+  (onBeforeSend)="onBeforeSend($event)"
+>
+  <ng-template pTemplate="content">
+    <ul *ngIf="uploadedFiles.length">
+      <li *ngFor="let file of uploadedFiles">
+        {{ file.name }} - {{ file.size }} bytes
+      </li>
+    </ul>
+  </ng-template>
+  >
+</p-fileUpload> -->
+
+<img [src]="photoBaseUrl + uploadedPhoto?.url" style="width: 300px; margin-top: 5px;" *ngIf="uploadedPhoto">
+
+
+<p-toast position="top-left"></p-toast>
+
+
+<p-dialog header="Select and edit photo" [(visible)]="togglePhotoDialog"
+  [breakpoints]="{'960px': '75vw', '640px': '100vw'}">
+  <input type="file" class="custom-file-input" (change)="fileChangeEvent($event)"
+    accept="image/png, image/jpeg,  image/jpg" />
+    <br> <br>
+
+  <button class="ui green button" (click)="uploadPhoto()" [disabled]="!imageSelected">Upload Photo</button>
+
+
+  <br> <br>
+
+  <div class="ui stackable two column grid">
+    <div class="column">
+      <div>
+        <image-cropper style="max-height: 500px;" [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true"
+          [containWithinAspectRatio]="containWithinAspectRatio" [aspectRatio]="20 / 9" [resizeToWidth]="1200"
+          [cropperMinWidth]="128" [onlyScaleDown]="true" [roundCropper]="false" imageQuality="70"
+          [canvasRotation]="canvasRotation" [transform]="transform" [alignImage]="'left'"
+          [style.display]="showCropper ? null : 'none'" format="jpeg" (imageCropped)="imageCropped($event)"
+          (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady($event)" (loadImageFailed)="loadImageFailed()">
+        </image-cropper>
+      </div>
+    </div>
+    <div class="column">
+      <div>
+        <p *ngIf="croppedImage">Following photo will be uploaded</p>
+
+        <img [src]="croppedImage" [style.border]="croppedImage ? '1px solid black' : 'none'" class="ui fluid image"
+          style="max-height: 500px;" />
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+</p-dialog>

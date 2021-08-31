@@ -1,0 +1,184 @@
+<div class="ui container" style="margin-top: 30px">
+  <div class="ui two column doubling grid">
+
+    <div class="twelve wide column">
+      <!-- PLACEHOLDER -->
+      <div class="ui stackable cards" style="margin-bottom: 30px" *ngIf="this.article === undefined">
+        <div class="ui card" style="width: 100%; padding: 10px">
+          <div class="image">
+            <div class="ui placeholder">
+              <div class="image" style="height: 250px"></div>
+            </div>
+          </div>
+          <div class="content">
+            <div class="ui placeholder">
+              <div class="image header">
+                <div class="line"></div>
+                <div class="line"></div>
+              </div>
+            </div>
+            <div class="ui placeholder">
+              <div class="header">
+                <div class="very short line"></div>
+                <div class="medium line"></div>
+              </div>
+              <div class="paragraph">
+                <div class="line"></div>
+                <div class="very short line"></div>
+                <div class="medium line"></div>
+                <div class="line"></div>
+                <div class="very short line"></div>
+                <div class="medium line"></div>
+                <div class="line"></div>
+                <div class="very short line"></div>
+                <div class="medium line"></div>
+                <div class="line"></div>
+                <div class="very short line"></div>
+                <div class="medium line"></div>
+                <div class="line"></div>
+                <div class="very short line"></div>
+                <div class="medium line"></div>
+
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- PLACEHOLDER -->
+
+      <div class="ui card" style="width: 100%; margin-bottom: 15px;" *ngIf="article">
+
+
+
+
+        <div class="image" *ngIf="article.photoUrl">
+          <img src="{{ basePhotoUrl + article?.photoUrl }}" />
+        </div>
+
+        <div class="content" style="padding: 30px">
+
+          <!-- <div class="right floated">
+            <div class="ui labeled button" tabindex="0">
+              <div class="ui tiny red button" (click)="addLike(article.id)">
+                <i class="heart icon"></i> Like
+              </div>
+              <a class="ui basic red left pointing label">
+                {{article.likeCount}}
+              </a>
+            </div>
+          </div> -->
+
+          <h1 class="header">{{ article.title }}</h1>
+          <div class="description">
+            <h3>{{ article.description }}</h3>
+          </div>
+
+          <br>
+          <div class="ui stackable two column grid">
+            <div class="seven wide column">
+              <a routerLink="/{{ article.username }}" class="stats">
+
+                <img *ngIf="!article.appUserPhotoUrl"  class="ui avatar image" src="{{'./assets/images/user.png'}}">
+
+                <img class="ui avatar image" *ngIf="article.appUserPhotoUrl"
+                  src="{{ basePhotoUrl + article.appUserPhotoUrl || 'https://semantic-ui.com/images/avatar/large/elliot.jpg'}}" />
+                {{ article?.appUserFullName || article.username }}
+              </a>        
+    
+              <span class="date stats"><i class="calendar alternate outline icon"></i>{{ article.dateCreated | date }}
+              </span>
+            </div>
+
+            <div class="nine wide column">
+              <div class="right floated">
+                <span class="stats"><i class="clock outline icon"></i>{{ article.readTime }}-{{ article.readTime + 1 }}
+                  min read</span>
+                <span class="stats"> <i class="heart outline like icon"></i>{{article.likeCount}} Like</span>
+                <!-- <span class="stats"><i class="comments outline icon"></i>{{article.viewCount}} Comments</span> -->
+                <span class="stats"><i class="desktop icon"></i>{{article.viewCount}} View</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ui stackable two column grid">
+            <div class="eleven wide column">
+              <div class="">
+                <div class="ui basic blue label" *ngFor="let cat of article.categories" routerLink="/tags/{{cat.name}}"
+                  [routerLinkActiveOptions]="{exact: true}" style="cursor: pointer;">
+                  #{{ cat.name }}
+                </div>
+              </div>
+            </div>
+            <div class="five wide column">
+              <div class="fluid ui tiny buttons">
+                <button class="ui red basic button" (click)="addLike(article.id)"><i class="heart icon"></i> Like
+                  ({{article.likeCount}}) </button>
+                <button class="ui blue basic button" (click)="scroll(discussion)"><i
+                    class="comments icon"></i>Discussion ({{article.commentCount}})</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="ui divider"></div>
+          <div>
+            <p innerHtml="{{ article.content }}" class="article-text"></p>
+          </div>
+        </div>
+
+        <div class="ui card " style="width: 100%; padding: 18px;" #discussion>
+          <div class="content">
+            <div class="ui comments">
+              <h3 class="ui dividing header">Discussion <span *ngIf="!user">(Register/Login to add comments)</span></h3>
+              <div class="comment" *ngFor="let comment of article.comments">
+                <a class="avatar">
+                  <img
+                    src="{{basePhotoUrl + comment.userPhotoUrl || 'https://semantic-ui.com/images/avatar/small/matt.jpg'}}">
+                </a>
+                <div class="content">
+                  <a class="author" routerLink="/{{comment.username}}">{{comment.userFullName || comment.username}}</a>
+                  <div class="metadata">
+                    <span class="date">{{comment.created | dateAgo}}</span>
+                  </div>
+                  <div class="text">
+                    {{comment.content}}
+                  </div>
+                </div>
+              </div>
+
+
+              <form class="ui reply form" [formGroup]="commentForm" (ngSubmit)="commentForm.valid && insertComment()"
+                *ngIf="user">
+                <div class="field">
+                  <textarea [formControl]="commentForm.controls['content']" [label]="'Content'" type="textarea"
+                    spellcheck="false" rows="2">
+            </textarea>
+                  <!-- <textarea spellcheck="false" data-ms-editor="true" autocomplete="off"></textarea> -->
+                </div>
+                <button class="ui blue submit icon button" type="submit">
+                  Add Comment
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="four wide column">
+
+
+      <app-user-side-card [username]="username"> </app-user-side-card>
+
+      <app-more-by-user *ngIf="article" [username]="article.username"></app-more-by-user>
+
+
+    </div>
+  </div>
+
+
+
+
+  <p-toast position="top-right"></p-toast>

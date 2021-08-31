@@ -1,0 +1,78 @@
+<div *ngIf="!article">
+
+<div class="ui fluid card" style="padding: 10px;">
+  <div class="ui placeholder">
+    <div class="content">
+      <div class="image header">
+        <div class="line"></div>
+        <div class="short line"></div>
+      </div>
+    </div>
+
+    <div class="image">
+      <div class="ui placeholder">
+        <div class="square image"></div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="line"></div>
+      <div class="short line"></div>
+      <div class="medium line"></div>
+      <div class="line"></div>
+      <div class="short line"></div>    
+    </div>
+  </div>
+  <br>
+</div>
+</div>
+
+<div class="ui fluid card">
+
+  <div class="content">
+    <div class="right floated meta"> {{article.dateCreated | date}} </div>
+
+    <a routerLink="/{{ article.username }}">
+
+
+      <!-- <img class="ui avatar image"> -->
+
+      <img *ngIf="!article.appUserPhotoUrl"  class="ui avatar image" src="{{'./assets/images/user.png'}}">
+
+      <img class="ui avatar image" *ngIf="article.appUserPhotoUrl"
+        src="{{basePhotoUrl + article.appUserPhotoUrl || 'https://semantic-ui.com/images/avatar/large/elliot.jpg'}}" />
+      {{ article?.appUserFullName || article.username }}
+    </a>
+
+
+  </div>
+
+  <div class="image" *ngIf="article.photoUrl">
+    <img src="{{basePhotoUrl + article?.photoUrl }}" class="article-card-img" />
+  </div>
+  <div class="content">
+    <a routerLink="/{{ article.username }}/{{ article.slug }}" class="header">{{ article.title }}</a>
+
+    <div class="description">
+      {{
+      article.description.length > 120
+      ? (article.description | slice: 0:120) + "..."
+      : article.description
+      }}
+    </div>
+
+    <div class="" *ngIf="article.categories.length > 0">
+      <br>
+      <div class="ui basic blue label" *ngFor="let cat of article.categories" routerLink="/tags/{{cat.name}}"
+        [routerLinkActiveOptions]="{exact: true}" style="cursor: pointer;">
+        #{{ cat.name }}
+      </div>
+    </div>
+
+  </div>
+  <div class="extra content" *ngIf="article.likeCount > 0">
+    <i class="heart icon"></i>
+    {{article.likeCount }}
+    {{article.likeCount > 1 ? 'Likes' : 'Like'}}
+  </div>
+</div>

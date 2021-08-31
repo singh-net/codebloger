@@ -1,0 +1,81 @@
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link
+  .p-menuitem-icon {
+  color: #fff;
+  font-size: 20px;
+}
+.p-menubar {
+  background: #4b6cb7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0361ad,
+    #156185
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0361ad,
+    #156185
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  border: none;
+  border-radius: 0px;
+  font-size: 15px;
+  /* padding-left: 21%;
+  padding-right: 21%; */
+
+  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link
+  .p-menuitem-text,
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link
+  .p-submenu-icon {
+  color: #fff;
+}
+
+@media screen and (max-width: 960px) {
+  .p-menubar .p-menubar-button {
+    color: #ffffff;
+  }
+
+  .p-menubar {
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link
+    .p-menuitem-text,
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link
+    .p-submenu-icon {
+    color: #495057;
+  }
+
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link
+    .p-menuitem-icon {
+    color: #495057;
+  }
+}
+
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+  color: #fff;
+}
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:hover {
+  color: rgb(48, 48, 48);
+}

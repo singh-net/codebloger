@@ -1,0 +1,95 @@
+<div class="ui container" style="margin-top: 30px">
+    <div class="ui segment">
+        <h3>Write Article</h3>
+
+
+        <app-add-photo></app-add-photo>
+
+        <br>
+
+        <form class="ui form" [formGroup]="articleForm" (ngSubmit)="submitArticle()">
+
+            <div class="field">
+                <label>Title</label>
+                <app-text-input [formControl]="articleForm.controls['title']" [label]="'Title'" type="text">
+                </app-text-input>
+            </div>
+
+            <div class="field">
+                <label>Description</label>
+                <app-text-input [formControl]="articleForm.controls['description']" [label]="'Description'" type="text">
+                </app-text-input>
+            </div>
+
+
+            <div class="field">
+                <div class="fields">
+                    <div class="thirteen wide field">
+                        <label>Select Tags (Max 5)</label>
+                        <p-multiSelect [style]="{ width: '100%' }" defaultLabel="Select Tags" [options]="tags"
+                            [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedTags" optionLabel="name"
+                            optionValue="id" display="chip" selectionLimit="5"></p-multiSelect>
+                    </div>
+
+
+                    <div class="three wide field">
+                        <label>Tag not in the list?</label>
+                        <button class="ui fluid blue button" (click)="showModalDialog()" type="button">Add New Tag</button>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="field">
+                <label>Write Your Article</label>
+                <p-editor [style]="{ height: '420px' }" [formControl]="articleForm.controls['content']">    
+                    <!-- <p-header>
+                        <span class="ql-formats">
+                          <button class="ql-bold"></button>
+                          <button class="ql-italic"></button>
+                          <button class="ql-underline"></button>
+                          <button class="ql-clean"></button>
+                        </span>
+                      </p-header> -->
+                </p-editor>
+
+                
+            </div>
+
+            <button class="ui blue button" type="submit" [disabled]="!articleForm.valid"
+                [formGroup]="articleForm">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+<p-dialog header="Add new tag" [(visible)]="toggleNewTagModal" [modal]="true" [style]="{width: '30vw'}"
+    [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+
+    <form (ngSubmit)="addNewTag($event)" class="ui form">
+        <div class="field">
+
+
+            <input type="text" name="newTag" value="" [pKeyFilter]="blockSpace" placeholder="Enter new tag">
+            <div class="ui pointing red basic label" *ngIf="isNtError">
+                {{ntError}}
+
+            </div>
+        </div>
+
+
+        <button class="ui fluid blue button" type="submit">Submit</button>
+
+    </form>
+
+</p-dialog>
+
+
+
+
+
+
+<p-toast position="top-right"></p-toast>

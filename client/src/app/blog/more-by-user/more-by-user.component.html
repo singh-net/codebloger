@@ -1,0 +1,26 @@
+<div class="ui card" style="width: 100%; padding: 10px" *ngIf="username">
+    <!-- <h3>More by {{username}}</h3> -->
+
+    <div class="content">
+        <div class="header">
+            <h2>More by {{username}}</h2>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <div class="ui  divided selection list">
+            <div class="item" *ngFor="let article of articles">
+                <div class="content">
+                    <a class="header" routerLink="/{{username}}/{{article.slug}}">
+                        <h4 style="font-size: 18px;"> {{article.title}}</h4>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>

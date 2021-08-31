@@ -1,0 +1,19 @@
+<div class="ui container" style="margin-top: 30px">
+  <div class="ui six doubling cards">
+    <div class="card" *ngFor="let tag of tags">
+      <div class="content">
+        <div class="header">
+          <h3>
+            <a routerLink="{{ tag.name }}">#{{ tag.name }} </a>
+          </h3>
+        </div>
+        <div class="meta" style="font-weight: 600;">
+          <span class="category">{{tag.postCount}} Articles</span>
+        </div>
+        <!-- <div class="description">
+          <p>{{ tag.description }}</p>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>

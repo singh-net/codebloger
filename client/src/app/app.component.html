@@ -1,0 +1,10 @@
+<app-nav></app-nav>
+<ngx-loading-bar color="#30a4ff" height="4px" fixed="false" ref="router" [includeSpinner]="false"></ngx-loading-bar>
+<!-- <ngx-loading-bar  height="4px" ref="router"></ngx-loading-bar> -->
+
+
+<router-outlet (activate)="onActivate($event)"></router-outlet>
+
+<app-footer></app-footer>
+
+<p-scrollTop></p-scrollTop>

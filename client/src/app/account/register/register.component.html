@@ -1,0 +1,93 @@
+<!-- <div class="ui container" style="margin-top: 150px; margin-bottom: 150px;">
+  <div class="ui centered card" style="width: 400px">
+    <div class="content">
+      <div class="header">
+        <h2 style="font-weight: 800">
+          Register
+        </h2>
+      </div>
+      <div class="meta">
+        <span>We are a community of 646,577 amazing developers</span>
+      </div>
+      <br>
+
+      <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && register()" class="ui form" autocomplete="on"
+        novalidate>
+        <app-text-input [formControl]="registerForm.controls['username']" [label]="'Username'" type="text">
+        </app-text-input>
+
+        <app-text-input [formControl]="registerForm.controls['email']" [label]="'Email'" type="text"></app-text-input>
+
+        <app-text-input [formControl]="registerForm.controls['password']" [label]="'Password'" type="password">
+        </app-text-input>
+
+        <app-text-input [formControl]="registerForm.controls['confirmPassword']" [label]="'ConfirmPassword'"
+          type="password"></app-text-input>
+
+        <button type="submit" class="ui primary button">Register</button>
+        <a routerLink="/account/login" class="float-end">Or login here</a>
+
+      </form>
+
+    </div>
+  </div>
+</div> -->
+
+
+<div class="ui middle aligned center aligned grid" style="margin-top: 100px; margin-bottom: 200px;">
+  <div class="column">
+    <h2 class="ui blue image header">
+      <div class="content">
+        Register new account
+      </div>
+      <div class="meta">
+        <span style="font-size: 18px;">We are a community of amazing developers</span>
+      </div>
+    </h2>
+
+    <div class="ui error message" *ngIf="isUserInValid">
+      <p> Error: {{ errorMessage }}</p>
+    </div>
+
+
+
+
+
+
+
+    <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && register()" class="ui form" autocomplete="off">
+      <div class="ui left aligned  segment">
+        <app-text-input [formControl]="registerForm.controls['username']" [label]="'Username'" type="text"
+          pKeyFilter="alphanum">
+        </app-text-input>
+
+        <app-text-input [formControl]="registerForm.controls['email']" [label]="'Email'" type="text"></app-text-input>
+
+
+        <app-text-input [formControl]="registerForm.controls['password']" [label]="'Password'" [type]="'password'">
+        </app-text-input>
+
+        <password-strength-meter *ngIf="registerForm.controls['password'].value" [enableFeedback]="true"
+          [password]="registerForm.controls['password'].value">
+          Your password must be 8-20 characters long, contain letters and numbers
+        </password-strength-meter>
+
+
+
+        <app-text-input [formControl]="registerForm.controls['confirmPassword']" [label]="'Confirm Password'"
+          [type]="'password'"></app-text-input>
+
+
+
+        <button type="submit" class="ui fluid large blue submit button">Register</button>
+      </div>
+
+    </form>
+
+
+
+    <div class="ui message">
+      Have an account? <a routerLink="/account/login">Log-in</a>
+    </div>
+  </div>
+</div>

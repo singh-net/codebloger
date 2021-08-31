@@ -1,0 +1,25 @@
+.ui.cards > .card > .content > .header:not(.ui), .ui.card > .content > .header:not(.ui) {
+    font-size: 25px;
+    font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.description {
+    font-size: 16px;
+}
+.ui.cards > .card a, .ui.card a {
+    font-size: 16px;
+}
+
+.ui.cards > .card > .extra, .ui.card > .extra {
+    color: #495057;
+
+}
+
+.ui.cards > .card > .content > .description, .ui.card > .content > .description, .ui.cards > .card .meta, .ui.card .meta
+{
+    margin-top: 7px;
+}
+
+.ui.basic.blue.label {
+    margin-bottom: 3px;
+}

@@ -1,0 +1,38 @@
+<div class="ui container" style="margin-top: 30px;">
+
+  <div class="ui compact menu" id="secondary-menu" style="margin-bottom: 20px;">
+    <a class="item" [ngClass]="{'active': userParams.orderBy==='dateCreated'}" (click)="latest()"> <i
+        class="bolt icon"></i>Latest</a>
+    <a class="item" [ngClass]="{'active': userParams.orderBy==='likeCount'}" (click)="mostLiked()"> <i
+        class="heart icon"></i>Most Liked</a>
+    <a class="item" [ngClass]="{'active': userParams.orderBy==='viewCount'}" (click)="viewCount()"> <i
+        class="play icon"></i>Most Viewed</a>
+  </div>
+
+
+
+
+
+  <div class="ui three column doubling stackable masonry grid" id="context">
+
+    <ng-container *ngIf="articles.length===0">
+      <app-article-placeholder *ngFor="let i of [].constructor(10)" class="column">
+      </app-article-placeholder>
+    </ng-container>
+
+    <app-article-card *ngFor="let article of articles" [article]="article" class="column">
+    </app-article-card>
+  </div>
+
+  <button (click)="loadMore()" class="ui fluid button" style="margin-top: 20px;"
+    [disabled]="pagination?.totalPages === userParams.pageNumber">Load More</button>
+
+
+
+  <!-- <div style="margin-top: 10px;">
+    <p-paginator [rows]="10" (onPageChange)="paginate($event)" [totalRecords]="pagination?.totalItems"
+      [showPageLinks]="true">
+    </p-paginator>
+  </div> -->
+
+</div>

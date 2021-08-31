@@ -1,0 +1,43 @@
+<div class="ui container" style="margin-top: 30px" *ngIf="member">
+  <div class="ui stackable two column grid">
+    <div class="four wide column">
+      <app-user-side-card [username]="username"></app-user-side-card>
+    </div>
+
+
+
+    <div class="twelve wide column">
+      <div *ngIf="articles.length===0" class="ui segment">
+        <h2 class="ui dividing header">
+          Articles by {{ member.name ||member.username }}
+        </h2>
+        {{member.name ||member.username}} hasn't written anything yet.
+
+        <br><br>
+      </div>
+
+
+      <div class="ui segment" *ngIf="articles.length>0">
+        <h2 class="ui dividing header">
+          Articles by {{ member.name ||member.username }}
+        </h2>
+        <div class="ui middle aligned  divided selection  list">
+          <div class="item" *ngFor="let article of articles" style="padding-bottom: 10px;">
+            <div class="content">
+              <h3> <a routerLink="/{{article.username}}/{{article.slug}}" class="header">{{article.title}}</a></h3>
+              <div class="" style="margin-top: -10px;">{{article.dateCreated | dateAgo}}
+                <span class="stats"> <i class="heart outline like icon"></i> {{article.likeCount}} Like </span>
+                <span class="stats"><i class="comments outline icon"></i> {{article.commentCount}} Comments </span>
+                <span class="stats"><i class="desktop icon"></i> {{article.viewCount}} Views </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <p-paginator [rows]="10" (onPageChange)="paginate($event)" [totalRecords]="pagination?.totalItems"
+          [showPageLinks]="true"></p-paginator>
+
+      </div>
+    </div>
+  </div>
+</div>

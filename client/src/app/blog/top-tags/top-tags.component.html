@@ -1,0 +1,47 @@
+<div class="ui card" *ngIf="tags.length===0">
+  <div class="content">
+    <h4>Popular Tags</h4>
+  </div>
+
+  <div class="content">
+    <div class="ui placeholder">
+      <div class="header">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="header">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="header">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="header">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="header">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="header">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="ui card" *ngIf="tags.length!==0">
+  <div class="content">
+    <h4>Popular Tags</h4>
+  </div>
+
+  <div class="content">
+    <div class="ui basic  blue label" *ngFor="let tag of tags" routerLink="/tags/{{tag.name}}" style="cursor: pointer;">
+     #{{ tag.name }}
+    </div>
+  </div>
+</div>

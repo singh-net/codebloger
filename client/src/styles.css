@@ -1,0 +1,147 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~primeicons/primeicons.css";
+@import "~primeng/resources/themes/saga-blue/theme.css";
+@import "~primeng/resources/primeng.min.css";
+@import "~semantic-ui-css/semantic.css";
+@import "~quill/dist/quill.core.css";
+@import "~quill/dist/quill.snow.css";
+@import "navStyle.css";
+
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap);
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ui.cards > .card > .content > .header:not(.ui),
+.ui.card > .content > .header:not(.ui) {
+  font-size: 30px;
+  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ui.list .list > .item .header,
+.ui.list > .item .header {
+  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ui.header, .ui.form .field > label, .ui.form input, .field, .ui.form textarea, .p-component{
+  font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+
+}
+.ui.segment {
+  border-radius: 0;
+}
+
+.ui.cards > .card,
+.ui.card, .ui.menu {
+  border-radius: 0;
+}
+
+.ui.cards > .card > .image > img,
+.ui.card > .image > img {
+  border-radius: 0;
+}
+
+.profile {
+  width: 100% !important;
+  /* height: 250px !important; */
+  object-fit: cover !important;
+}
+
+.article-card-img {
+  width: 100% !important;
+  /* height: 300px !important; */
+  object-fit: cover !important;
+}
+
+@media only screen and (min-width: 1200px) {
+.ui.container {
+  width: 80% !important;
+}}
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ui.container {
+    margin-left: 1% !important;
+    margin-right: 1% !important;
+  }
+}
+
+
+
+body {
+  background-color: #eef0f1 !important;
+  font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  font-weight: normal;
+}
+
+.ui.labeled.icon.menu .item,
+.ui.list .list > .item .header,
+.ui.list > .item .header,
+.ui.list .list > .item a.header,
+.ui.list > .item a.header {
+  font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.ui.cards > .card > .content > .description, .ui.card > .content > .description, .ui.cards > .card .meta, .ui.card .meta 
+{
+  color: rgb(22, 22, 22);
+  font-size: 15px;
+}
+
+
+
+
+
+.masonry.grid {
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  .masonry.grid {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 0;
+       -moz-column-gap: 0;
+            column-gap: 0;
+  }
+  
+  .ui.doubling.masonry.grid[class*="three column"] > .column {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .masonry.grid {
+    -webkit-column-count: 3;
+       -moz-column-count: 3;
+            column-count: 3;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+.ui.container {
+  width: 98%;
+}}
+
+
+.ql-syntax{
+  background: black;
+  color: white;
+  padding: 11px;
+  border-radius: 5px;
+}
+
+.p-password-input {
+ 
+  width: 392px !important;
+  margin-bottom: 10px !important;
+}

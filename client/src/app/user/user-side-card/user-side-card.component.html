@@ -1,0 +1,83 @@
+<div class="ui card" style="width: 100%;" *ngIf="member=== undefined">
+
+  <div class="image">
+    <div class="ui placeholder">
+      <div class="square image"></div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="ui placeholder">
+      <div class="header">
+        <div class="very short line"></div>
+        <div class="medium line"></div>
+      </div>
+      <div class="paragraph">
+        <div class="short line"></div>
+      </div>
+    </div>
+  </div>
+  <div class="extra content">
+    <div class="ui disabled blue button">Follow</div>
+  </div>
+  <ngx-loading-bar color="#30a4ff" height="4px" fixed="false" ref="router" [includeSpinner]="false"></ngx-loading-bar>
+
+</div>
+
+
+
+<div class="ui card" *ngIf="member" style="width: 100%;">
+  <div class="image">
+
+    <img *ngIf="!member.photoUrl" src="{{'./assets/images/user.png'}}">
+
+    <img *ngIf="member.photoUrl" src="{{
+        basePhotoUrl + member.photoUrl || 'https://semantic-ui.com/images/avatar2/large/matthew.png'
+      }}" />
+  </div>
+  <div class="content">
+    <div class="header"> <a routerLink="/{{member.username}}">
+        <h2>{{ member.name || member.username}}</h2>
+      </a>
+    </div>
+    <div class="" *ngIf="member.workAs">
+      {{ member.workAs }} at {{ member.workAt }}
+    </div>
+    <br>
+    <div class="description" style="margin-top: 5px">
+      <p>
+        {{ member.about }}
+
+      </p>
+      <p style="margin-top: 5px" *ngIf="member.city">
+        Location: {{ member.city }}, {{ member.country }}
+      </p>
+    </div>
+
+    <br />
+
+    <!-- <div class="ui fluid labeled small button" tabindex="0">
+      <div class="fluid ui blue button" (click)="addFollow(member.username)">
+        <i class="user icon"></i>
+        {{isFollow === true? 'Unfollow' : 'Follow'}}
+      </div>
+      <a class="ui basic left pointing blue label">
+        {{ member.totalFollowers }}
+      </a>
+    </div>
+
+    <br> -->
+
+    <app-follow-button [username]="member.username"></app-follow-button>
+
+  </div>
+  <div class="extra content">
+    <span class="right floated"> Joined {{ member.created | date }} </span>
+    <span>
+      <i class="user icon"></i>
+      {{ member.totalFollowers }} Followers
+    </span>
+  </div>
+
+</div>
+
+<p-toast position="top-right"></p-toast>

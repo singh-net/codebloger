@@ -1,0 +1,100 @@
+<!-- Sidebar Menu -->
+<div class="ui vertical sidebar menu left " [ngClass]="isSideNavVisible ? 'uncover visible' : 'danger'">
+  <a class="item" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+    (click)="toggleSidebar()"> <i class="terminal icon"></i>
+    CodeBloger</a>
+
+  <div class="ui simple dropdown item" *ngIf="(accountService.currentUser$ | async) as user">
+    <i class="user icon"></i>
+    Welcome, {{user.name || user.username}}
+    
+  </div>
+
+  <a (click)="toggleSidebar()" class="item" routerLink="tags" routerLinkActive="active"> <i
+      class="tags icon"></i>Tags</a>
+  <a (click)="toggleSidebar()" class="item" routerLink="users" routerLinkActive="active"> <i
+      class="users icon"></i>Users</a>
+
+  <div *ngIf="(accountService.currentUser$ | async) as user">
+
+    <a (click)="toggleSidebar()" class="item" routerLink="profile"><i class="user icon"></i>My Profile</a>
+
+    <a (click)="toggleSidebar()" class="item" routerLink="new"><i class="pencil alternate icon"></i>Write Article</a>
+
+    <a (click)="toggleSidebar()" class="item" routerLink="admin/manage-articles" *appHasRole='["Admin"]'><i
+        class="user icon"></i>Manage
+      Articles</a>
+
+    <a (click)="toggleSidebar()" class="item" routerLink="admin/manage-users" *appHasRole='["Admin"]'><i
+        class="user icon"></i>Manage
+      Users</a>
+
+    <a class="item" (click)="logout()"><i class="sign-out icon"></i>Logout</a>
+
+  </div>
+
+
+  <a (click)="toggleSidebar()" routerLink="account/login" class="item"
+    *ngIf="(accountService.currentUser$ | async) === null"><i class="sign-in icon"></i>Login</a>
+
+  <a (click)="toggleSidebar()" routerLink="account/register" class="item"
+    *ngIf="(accountService.currentUser$ | async) === null"><i class="user icon"></i>Register</a>
+
+  <a class="item" (click)="toggleSidebar()"> <i class="x icon"></i>
+    Close Menu</a>
+</div>
+
+<div class="pusher">
+  <!-- <div class="ui inverted vertical masthead center aligned segment"> -->
+
+
+  <div class="ui fluid large inverted menu">
+    <div class="ui container">
+
+      <a class="toc item" (click)="toggleSidebar()">
+        <i class="sidebar icon"></i>CodeBlogger
+      </a>
+
+      <a class="item" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> <i
+          class="terminal icon"></i>
+        CodeBloger</a>
+
+      <a class="item" routerLink="tags" routerLinkActive="active"> <i class="tags icon"></i>Tags</a>
+      <a class="item" routerLink="users" routerLinkActive="active"> <i class="users icon"></i>Users</a>
+
+
+      <div class="ui simple dropdown item" *ngIf="(accountService.currentUser$ | async) as user">
+        <i class="user icon"></i>
+        Welcome, {{user.name || user.username}}
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item" routerLink="profile"><i class="user icon"></i>My Profile</a>
+          <a class="item" routerLink="profile"><i class="bell icon"></i>Notifications (40)</a>
+          <a class="item" routerLink="new"><i class="pencil alternate icon"></i>Write
+            Article</a>
+
+          <div class="divider" *appHasRole='["Admin"]'></div>
+
+          <a class="item" routerLink="admin/manage-articles" *appHasRole='["Admin"]'><i class="user icon"
+              (click)="isSideNavVisible = false"></i>Manage
+            Articles</a>
+
+          <a class="item" routerLink="admin/manage-users" *appHasRole='["Admin"]'><i
+              class="user icon"></i>Manage
+            Users</a>
+
+          <div class="divider"></div>
+          <a class="item" (click)="logout()"><i class="sign-out icon"></i>Logout</a>
+        </div>
+      </div>
+
+      <div class="right item" *ngIf="(accountService.currentUser$ | async) === null">
+        <a routerLink="account/login" class="mini ui inverted button" style="margin-right: 5px;"><i
+            class="sign-in icon"></i>
+          Login</a>
+        <a routerLink="account/register" class="mini ui inverted button"><i class="user icon"></i>Register</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->

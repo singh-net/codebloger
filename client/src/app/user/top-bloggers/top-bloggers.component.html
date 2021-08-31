@@ -1,0 +1,21 @@
+
+
+<div class="ui card" *ngIf="members.length !==0" style="width: 100%;">
+  <div class="content">
+    <h4>Top Bloggers</h4>
+  </div>
+
+  <div class="content">
+    <div class="ui  horizontal  list">
+      <div class="item" *ngFor="let member of members">
+        <a routerLink="/{{member.username}}">
+        <img *ngIf="!member.photoUrl"  class="ui small circular image" src="{{'./assets/images/user.png'}}">
+        <img *ngIf="member.photoUrl" class="ui small circular image" src="{{  basePhotoUrl + member.photoUrl}}">
+        <p style="text-align: center; margin-top: 5px; margin-bottom: 5px;">{{member.name || member.username}}</p>        
+      </a>
+      <app-follow-button [username]="member.username" [styleClasses]="'tiny'"></app-follow-button>
+      </div>
+    </div>
+  </div>
+</div>
+

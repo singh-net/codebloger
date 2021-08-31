@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAASnxUd4QSkkigsw8wp7JIYQAAAAACAAAAAAAQZgAAAAEAACAAAADc3JqvEMeFdUnan+Wq7IcoH8xz/zzV4JG8w8+lgS+cewAAAAAOgAAAAAIAACAAAAAKX06rA5lVLxSoSIpIh3MFrzLUgeqcNWAyAIbAyhqFrSAAAABVr43ralvNA+AcI2kUzXv8RY9egHWvDahpz7R+CPsvrUAAAAAJd9TcOSo9l3eO3fh99dpt1+6xmvmYu4eJabNfWOI5q6Mntr9PDi/B7HMbk63VBUJjesE1O0mE0sOKrzjsI/th</EncryptedPassword>
+    <_PublishTargetUrl>ftp://access880151973.webspace-data.io</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="API.deps.json">
+      <publishTime>08/05/2021 15:36:20</publishTime>
+    </File>
+    <File Include="API.dll">
+      <publishTime>08/05/2021 15:36:20</publishTime>
+    </File>
+    <File Include="API.exe">
+      <publishTime>08/05/2021 15:36:20</publishTime>
+    </File>
+    <File Include="API.pdb">
+      <publishTime>08/05/2021 15:36:20</publishTime>
+    </File>
+    <File Include="API.runtimeconfig.json">
+      <publishTime>08/05/2021 15:29:24</publishTime>
+    </File>
+    <File Include="appsettings.Development.json">
+      <publishTime>07/05/2021 19:12:04</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>07/05/2021 19:12:16</publishTime>
+    </File>
+    <File Include="AutoMapper.dll">
+      <publishTime>10/16/2020 15:36:54</publishTime>
+    </File>
+    <File Include="AutoMapper.Extensions.Microsoft.DependencyInjection.dll">
+      <publishTime>02/05/2021 14:28:34</publishTime>
+    </File>
+    <File Include="CloudinaryDotNet.dll">
+      <publishTime>06/08/2021 10:00:56</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Authentication.JwtBearer.dll">
+      <publishTime>05/13/2021 21:04:14</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Authentication.OpenIdConnect.dll">
+      <publishTime>05/13/2021 21:03:32</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Cryptography.Internal.dll">
+      <publishTime>05/13/2021 21:02:42</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Cryptography.KeyDerivation.dll">
+      <publishTime>05/13/2021 21:02:48</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll">
+      <publishTime>05/13/2021 21:04:14</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.JsonPatch.dll">
+      <publishTime>05/13/2021 21:01:40</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll">
+      <publishTime>05/13/2021 21:04:16</publishTime>
+    </File>
+    <File Include="Microsoft.Data.SqlClient.dll">
+      <publishTime>08/25/2020 23:24:48</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.Abstractions.dll">
+      <publishTime>05/13/2021 18:31:38</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.dll">
+      <publishTime>05/13/2021 18:31:54</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.Relational.dll">
+      <publishTime>05/13/2021 18:31:58</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.SqlServer.dll">
+      <publishTime>05/13/2021 18:32:26</publishTime>
+    </File>
+    <File Include="Microsoft.Extensions.DependencyInjection.dll">
+      <publishTime>11/26/2020 01:59:12</publishTime>
+    </File>
+    <File Include="Microsoft.Extensions.Identity.Core.dll">
+      <publishTime>05/13/2021 21:02:50</publishTime>
+    </File>
+    <File Include="Microsoft.Extensions.Identity.Stores.dll">
+      <publishTime>05/13/2021 21:03:14</publishTime>
+    </File>
+    <File Include="Microsoft.Extensions.WebEncoders.dll">
+      <publishTime>01/23/2021 12:34:18</publishTime>
+    </File>
+    <File Include="Microsoft.Identity.Client.dll">
+      <publishTime>05/18/2020 20:11:54</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.JsonWebTokens.dll">
+      <publishTime>05/21/2021 22:23:54</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Logging.dll">
+      <publishTime>05/21/2021 22:25:46</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Protocols.dll">
+      <publishTime>06/30/2020 01:06:48</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Protocols.OpenIdConnect.dll">
+      <publishTime>06/30/2020 01:13:54</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Tokens.dll">
+      <publishTime>05/21/2021 22:30:12</publishTime>
+    </File>
+    <File Include="Newtonsoft.Json.Bson.dll">
+      <publishTime>11/27/2018 23:10:18</publishTime>
+    </File>
+    <File Include="Newtonsoft.Json.dll">
+      <publishTime>11/09/2019 00:56:44</publishTime>
+    </File>
+    <File Include="runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll">
+      <publishTime>08/25/2020 23:25:12</publishTime>
+    </File>
+    <File Include="runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll">
+      <publishTime>08/25/2020 20:34:56</publishTime>
+    </File>
+    <File Include="runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.pdb">
+      <publishTime>08/25/2020 20:31:56</publishTime>
+    </File>
+    <File Include="runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll">
+      <publishTime>08/25/2020 20:35:06</publishTime>
+    </File>
+    <File Include="runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.pdb">
+      <publishTime>08/25/2020 20:31:56</publishTime>
+    </File>
+    <File Include="runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll">
+      <publishTime>08/25/2020 20:34:56</publishTime>
+    </File>
+    <File Include="runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.pdb">
+      <publishTime>08/25/2020 20:31:56</publishTime>
+    </File>
+    <File Include="runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll">
+      <publishTime>08/25/2020 20:34:56</publishTime>
+    </File>
+    <File Include="runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.pdb">
+      <publishTime>08/25/2020 20:31:56</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll">
+      <publishTime>08/25/2020 23:24:48</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll">
+      <publishTime>11/15/2019 08:53:44</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll">
+      <publishTime>11/15/2019 08:53:46</publishTime>
+    </File>
+    <File Include="Slugify.Core.dll">
+      <publishTime>11/26/2020 22:53:44</publishTime>
+    </File>
+    <File Include="System.Configuration.ConfigurationManager.dll">
+      <publishTime>11/15/2019 08:37:04</publishTime>
+    </File>
+    <File Include="System.Diagnostics.DiagnosticSource.dll">
+      <publishTime>12/12/2020 02:40:42</publishTime>
+    </File>
+    <File Include="System.IdentityModel.Tokens.Jwt.dll">
+      <publishTime>05/21/2021 22:22:44</publishTime>
+    </File>
+    <File Include="System.Runtime.Caching.dll">
+      <publishTime>11/15/2019 08:37:36</publishTime>
+    </File>
+    <File Include="System.Security.Cryptography.ProtectedData.dll">
+      <publishTime>11/15/2019 08:37:42</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>08/05/2021 15:36:20</publishTime>
+    </File>
+    <File Include="wwwroot/3rdpartylicenses.txt">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/brand-icons.278156e41e0ad908cf7f.woff2">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/brand-icons.65a2fb6d9aaa164b41a0.ttf">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/brand-icons.6729d29753e000c17489.svg">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/brand-icons.cac87dc00c87a5d74711.woff">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/brand-icons.d68fa3e67dbb653a13ce.eot">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/color.6441e63a57ccc5105bad.png">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/favicon.ico">
+      <publishTime>07/22/2021 10:50:20</publishTime>
+    </File>
+    <File Include="wwwroot/flags.99f63ae7a743f21ab308.png">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/hue.f8505bd4d6f3e3aa435b.png">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/icons.38c6d8bab26db77d8c80.woff2">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/icons.425399f81e4ce7cbd967.woff">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/icons.62d9dae4e0040e81c980.svg">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/icons.a01e3f2d6c83dc3aee17.eot">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/icons.c656b8caa454ed19b9a2.ttf">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/index.html">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/main.eb57494da0bd7c851070.js">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/outline-icons.5367103510b27b784827.ttf">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/outline-icons.687a4990ea22bb1a49d4.woff2">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/outline-icons.752905fa5edf21fc52a1.eot">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/outline-icons.9c4845b4b41ef40a22fa.svg">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/outline-icons.ddae9b1ba9b0b42f5880.woff">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/polyfills.254c57742aa831570d1b.js">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/primeicons.3a0d4a58da62cf7c55bb.ttf">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/primeicons.c55d94a248721abbd220.svg">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/primeicons.dfbfef2de4bfb34e9722.eot">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/primeicons.e61f3495a7ecd3d571a4.woff">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/runtime.e77a5b47f9811c96bc9e.js">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+    <File Include="wwwroot/styles.9b96ad37c254ddddbb4c.css">
+      <publishTime>08/05/2021 14:46:52</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

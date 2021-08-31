@@ -1,0 +1,94 @@
+<!-- <h4 class="ui dividing header">Upload photos</h4> -->
+
+
+<button type="button" class="ui blue button" (click)="showDialog()" icon="pi pi-info-circle" label="Show">Upload
+    Photo</button>
+
+
+<!-- <p-fileUpload name="myfile[]"  accept="image/*" [auto]="true" mode="basic" [withCredentials]="false"
+    (onSelect)="onSelect($event)" (onUpload)="onUpload($event)" (onBeforeSend)="onBeforeSend($event)">
+
+    <ng-template pTemplate="content">
+        <ul *ngIf="uploadedFiles.length">
+            <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+        </ul>
+    </ng-template>
+    >
+</p-fileUpload> -->
+
+
+<h4 class="ui dividing header">Manage photos</h4>
+
+
+<div class="ui five doubling cards">
+    <div class="ui fluid card" *ngFor="let photo of member.userPhotos">
+        <div class="image">
+            <img src="{{ basePhotoUrl + photo.url }}">
+        </div>
+        <div class="extra content">
+
+            <a class="ui green right corner label"  *ngIf="photo.isMain" pTooltip="Current Display Photo" tooltipPosition="top">
+                <i class="check icon"></i>
+              </a>
+
+
+            <span class="right floated">
+
+                <button class="circular ui tiny icon basic red button" pTooltip="Delete photo" tooltipPosition="top"
+                    [disabled]="photo.isMain" (click)="deletePhoto(photo.id)">
+                    <i class=" trash alternate outline icon"></i>
+                </button>
+
+                <button class="circular ui tiny icon basic green button" pTooltip="Set as display photo"
+                    tooltipPosition="top" [disabled]="photo.isMain" (click)="setMainPhoto(photo)">
+                    <i class=" check  icon"></i>
+                </button>
+
+
+            </span>
+
+        </div>
+    </div>
+</div>
+
+
+<p-toast position="top-right"></p-toast>
+
+
+<p-dialog header="Select and edit photo" [(visible)]="togglePhotoDialog"
+    [breakpoints]="{'960px': '75vw', '640px': '100vw'}">
+    <input type="file" class="custom-file-input" (change)="fileChangeEvent($event)"
+        accept="image/png, image/jpeg,  image/jpg" />
+
+    <br> <br>
+    <button class="ui green button" (click)="uploadPhoto()" [disabled]="!imageSelected">Upload Photo</button>
+
+
+    <br> <br>
+
+    <div class="ui stackable two column grid">
+        <div class="column">
+            <div>
+                <image-cropper style="max-height: 500px;" [imageChangedEvent]="imageChangedEvent"
+                    [maintainAspectRatio]="true" [containWithinAspectRatio]="containWithinAspectRatio"
+                    [aspectRatio]="1 / 1" [resizeToWidth]="800" [cropperMinWidth]="128" [onlyScaleDown]="true"
+                    [roundCropper]="false" imageQuality="70" [canvasRotation]="canvasRotation" [transform]="transform"
+                    [alignImage]="'left'" [style.display]="showCropper ? null : 'none'" format="jpeg"
+                    (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
+                    (cropperReady)="cropperReady($event)" (loadImageFailed)="loadImageFailed()"></image-cropper>
+            </div>
+        </div>
+        <div class="column">
+            <p *ngIf="croppedImage">Following photo will be uploaded</p>
+            <div>
+                <img [src]="croppedImage" [style.border]="croppedImage ? '1px solid black' : 'none'" class="ui fluid image"
+                    style="max-height: 500px;" />
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+</p-dialog>

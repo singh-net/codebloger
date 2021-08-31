@@ -1,0 +1,72 @@
+<!-- <div class="ui container" style="margin-top: 150px; margin-bottom: 150px;">
+  <h2 class="ui blue image header ">
+    <div class="content centered" style="text-align: center;">
+      Log-in to your account
+    </div>
+  </h2>
+  <div class="ui centered card" style="width: 400px">
+    <div class="content">
+      <div class="header">
+        <h2 style="font-weight: 800">
+          Login
+        </h2>
+      </div>
+
+      <br>
+      <div class="ui error message" *ngIf="isUserInValid">
+        <p> Error: {{ errorMessage }}</p>
+      </div>
+      <form class="ui form" [formGroup]="loginForm" (ngSubmit)="loginForm.valid && login()" novalidate
+        autocomplete="on">
+
+        <label>Username</label>
+
+        <app-text-input [formControl]="loginForm.controls['username']" [label]="'Username'" type="text">
+        </app-text-input>
+        <label>Password</label>
+        <app-text-input [formControl]="loginForm.controls['password']" [label]="'Password'" type="password">
+        </app-text-input>
+        <button class="ui primary button" type="submit" [formGroup]="loginForm">Submit</button>
+        Or <a routerLink="/account/register">Register here</a>
+      </form>    
+    </div>
+    
+  </div>
+</div> -->
+
+
+<div class="ui middle aligned center aligned grid" style="margin-top: 100px; margin-bottom: 200px;">
+  <div class="column">
+    <h2 class="ui blue image header">
+      <div class="content">
+        Log-in to your account
+      </div>
+    </h2>
+    <div class="ui error message" *ngIf="isUserInValid">
+      <p> Error: {{ errorMessage }}</p>
+    </div>
+
+
+
+
+    <form class="ui form" [formGroup]="loginForm" (ngSubmit)="loginForm.valid && login()" novalidate autocomplete="on">
+      <div class="ui left aligned  segment">
+        <label>Username</label>
+
+        <app-text-input [formControl]="loginForm.controls['username']" [label]="'Username'" type="text">
+        </app-text-input>
+        <label>Password</label>
+        <app-text-input [formControl]="loginForm.controls['password']" [label]="'Password'" type="password">
+        </app-text-input>
+        <button type="submit" class="ui fluid large blue submit button" [formGroup]="loginForm">Login</button>
+      </div>
+    </form>
+
+
+
+
+    <div class="ui message">
+      New to us? <a routerLink="/account/register">Sign Up</a>
+    </div>
+  </div>
+</div>

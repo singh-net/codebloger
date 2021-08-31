@@ -1,0 +1,18 @@
+<div class="ui middle aligned selection list">
+  <div class="item" *ngFor="let member of followers">
+    <img *ngIf="!member.photoUrl"  class="ui avatar image" src="{{'./assets/images/user.png'}}">
+    <img *ngIf="member.photoUrl"
+      class="ui avatar image"
+      src="{{
+        basePhotoUrl + member.photoUrl ||
+          'https://semantic-ui.com/images/avatar2/large/matthew.png'
+      }}"
+    />
+    <div class="content">
+      <a routerLink="/{{ member.username }}">
+        <div class="header">{{ member.name || member.username }}</div>
+      </a>
+    </div>
+  </div>
+</div>
+

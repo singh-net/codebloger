@@ -1,0 +1,33 @@
+.article-text {
+  font-size: 18px;
+  overflow-x: hidden;
+}
+
+.floating-menu {
+  padding: 5px;
+  width: 130px;
+  z-index: 100;
+  position: fixed;
+  left: 90%;
+  top: 10%;
+}
+
+.ui.vertical.icon.menu .item > .icon:not(.dropdown) {
+  margin-bottom: 5px;
+}
+
+.stats {
+  margin-right: 10px;
+}
+
+.ui.basic.blue.label {
+  margin-bottom: 3px;
+  padding: 9px;
+}
+
+@media only screen and (max-width: 750px) {
+  .right {
+    float: left !important;
+  }
+}
+

@@ -1,0 +1,11 @@
+<div class="ui fluid labeled  button" tabindex="0" *ngIf="member">
+    <div class="fluid ui blue  button" (click)="addFollow(member.username)" [ngClass]="styleClasses">
+        <i class="user icon"></i>
+        {{isFollow === true? 'Following' : 'Follow'}}
+    </div>
+    <a class="ui basic left pointing blue label">
+        {{ member.totalFollowers }}
+    </a>
+</div>
+
+<p-toast position="top-right"></p-toast>
